@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Django level2</title>
+    <title>Users</title>
     <link rel="stylesheet" href="{% static 'css/mystile.css' %}"/>
 </head>
 <body>
@@ -13,33 +13,33 @@
 <img src="{% static 'images/screen.png' %}" alt="pic not showing">-->
 
 <h1>Hi, welcome to Django level 2</h1>
-<h2>Herea are your access records:</h2>
+<h2>Here are our users:</h2>
 
 
 <div class="djangtwo">
 
-    {% if access_records %}
+    {% if all_users %}
     <table>
 
         <thead>
-        <th>Site Name</th>
-        <th>Date accessed</th>
+        <th>Name</th>
+        <th>Email</th>
 
         </thead>
 
-        {% for acc in access_records %}
+        {% for user in all_users %}
 
         <tr>
 
-            <td>{{ acc.name }}</td>
-            <td>{{ acc.date }}</td>
+            <td>{{ user.last }}</td>
+            <td>{{ user.email }}</td>
 
         </tr>
         {% endfor %}
     </table>
 
     {% else %}
-    <p>No access record found!</p>
+    <p>No users record found!</p>
     {% endif %}
 </div>
 

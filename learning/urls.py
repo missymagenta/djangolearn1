@@ -21,5 +21,6 @@ from django.conf.urls import include
 urlpatterns = [
     path('', views.index, name='index'),
     path('firstapp/', include('firstapp.urls')),
+    path('users/', include('secondapp.urls')),
     path('admin/', admin.site.urls),
 ]
